@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  mysql:
+    build: ./mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  redis:
+    build: ./redis
+    ports:
+      - "6379:6379"
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/vhosts:/etc/nginx/conf.d
+        /mnt/code:/var/www/html
+  php56:
+    build: ./php56
+    volumes:
+      - /mnt/code:/var/www/html
