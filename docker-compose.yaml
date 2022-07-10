@@ -27,5 +27,9 @@ services:
     build: ./php56
     volumes:
       - /mnt/code:/var/www/html
-  busybox:
-    build: ./busybox
+  php74:
+    build: ./php74
+    volumes:
+      - /mnt/code:/var/www/html
+#  busybox:
+#    build: ./busybox
