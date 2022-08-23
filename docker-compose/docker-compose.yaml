@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   mysql:
-    build: ./mysql
+    build: mysql
     ports:
       - "3306:3306"
     volumes:
@@ -10,11 +10,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
   redis:
-    build: ./redis
+    build: redis
     ports:
       - "6379:6379"
   nginx:
-    build: ./nginx
+    build: nginx
     ports:
       - "80:80"
     volumes:
@@ -24,11 +24,11 @@ services:
     #command: [nginx-debug, '-g', 'daemon off;'] # 使用debug模式
     privileged: true # 特权模式，解决挂载代码导致的权限问题
   php56:
-    build: ./php56
+    build: php56
     volumes:
       - /mnt/code/sdkhw.eyugame.com:/var/www/html
   php74:
-    build: ./php74
+    build: php74
     volumes:
       - /mnt/code/sdkhw-x.eyugame.com:/var/www/html
     privileged: true
