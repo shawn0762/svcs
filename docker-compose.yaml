@@ -32,5 +32,14 @@ services:
     volumes:
       - /mnt/code/sdkhw-x.eyugame.com:/var/www/html
     privileged: true
+#  svn-edge:
+#    image: svnedge/app:latest
+#    ports:
+#      - "18080:18080"
+#      - "3343:3343"
+#    environment:
+#      SET_PERMS: "false"
+#    volumes:
+#      - /tmp/svnedge/csvn/data:/home/svnedge/csvn/data
 #  busybox:
 #    build: ./busybox
