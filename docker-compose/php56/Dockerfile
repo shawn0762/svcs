@@ -9,5 +9,6 @@ RUN docker-php-ext-configure gd -with-php-config=/usr/local/bin/php-config -with
   && docker-php-ext-install gd
 
 RUN pecl install igbinary-2.0.8 redis-3.1.6
+RUN apt-get install -y libzip-dev && pecl install zip
 
 COPY php.ini /usr/local/etc/php/php.ini
