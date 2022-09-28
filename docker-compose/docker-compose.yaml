@@ -27,11 +27,25 @@ services:
     build: php56
     volumes:
       - /mnt/code/sdkhw.eyugame.com:/var/www/html
+  laravel56:
+    build: php56
+    volumes:
+      - /mnt/code/laravel56:/var/www/html
   php74:
     build: php74
     volumes:
       - /mnt/code/sdkhw-x.eyugame.com:/var/www/html
     privileged: true
+    environment:
+      - APP_ENV=production
+#  postgresql:
+#    image: postgres:14.5
+#    environment:
+#      - POSTGRES_PASSWORD=111111
+#      - POSTGRES_USER=root
+#    privileged: true
+#    volumes:
+#      - ./postgresql/data:/var/lib/postgresql/data
 #  svn-edge:
 #    image: svnedge/app:latest
 #    ports:

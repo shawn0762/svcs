@@ -12,3 +12,6 @@ RUN pecl install igbinary-2.0.8 redis-3.1.6
 RUN apt-get install -y libzip-dev && pecl install zip
 
 COPY php.ini /usr/local/etc/php/php.ini
+COPY composer-2.2.18.phar /usr/local/bin/composer
+
+RUN chmod 755 /usr/local/bin/composer
