@@ -19,4 +19,5 @@ RUN apt-get -y install git
 RUN apt-get -y install libzip-dev \
     && docker-php-ext-install zip
 
+RUN apt-get -y install unzip
 COPY php.ini /usr/local/etc/php/php.ini
