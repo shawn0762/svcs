@@ -15,5 +15,8 @@ RUN php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.ph
 
 #RUN pecl install igbinary-3.2.14
 RUN apt-get -y install git
+# composer install需要
+RUN apt-get -y install libzip-dev \
+    && docker-php-ext-install zip
 
 COPY php.ini /usr/local/etc/php/php.ini
